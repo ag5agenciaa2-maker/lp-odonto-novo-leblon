@@ -465,7 +465,7 @@
                         <div class="dep-video-frame">
                             <video controls preload="metadata" class="dep-video-player" id="video1">
                                 <source
-                                    src="https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/69f2b30e663e5f92ff0b6230.mp4"
+                                    src="https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/69f2b30e663e5f92ff0b6230.mp4#t=0,15"
                                     type="video/mp4">
                                 Seu navegador não suporta vídeos.
                             </video>
@@ -1376,8 +1376,8 @@
             var ctaV1 = document.getElementById('video1-cta-jose');
             if (v1 && ctaV1) {
                 v1.addEventListener('timeupdate', function() {
-                    // Exibição do botão aos 20 segundos de vídeo
-                    if (v1.currentTime >= 20) {
+                    // Exibição do botão aos 14 segundos de vídeo (logo antes do final de 15s)
+                    if (v1.currentTime >= 14) {
                         if (ctaV1.style.display === 'none') {
                             ctaV1.style.display = 'block';
                             ctaV1.style.animation = 'fadeInUp 0.6s ease forwards';
