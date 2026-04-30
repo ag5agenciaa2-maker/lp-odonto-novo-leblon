@@ -7,13 +7,13 @@
     <!-- ============================================
          Sitemap XML — Odonto Novo Leblon
          URL: https://www.odontonovoleblon.ag5agencia.site/
-         Última atualização: 2026-04-09
+         Última atualização: 2026-04-29
          ============================================ -->
 
     <!-- Página Principal (Landing Page) -->
     <url>
         <loc>https://www.odontonovoleblon.ag5agencia.site/</loc>
-        <lastmod>2026-04-09</lastmod>
+        <lastmod>2026-04-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
         <image:image>
@@ -33,6 +33,22 @@
             <image:loc>https://www.odontonovoleblon.ag5agencia.site/assets/tecnologia-odontologia-moderna.webp</image:loc>
             <image:title>Tecnologia Moderna em Odontologia</image:title>
         </image:image>
+    </url>
+
+    <!-- Página de Termos e Condições -->
+    <url>
+        <loc>https://www.odontonovoleblon.ag5agencia.site/termos-e-condicoes.html</loc>
+        <lastmod>2026-04-29</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <!-- Página de Política de Privacidade -->
+    <url>
+        <loc>https://www.odontonovoleblon.ag5agencia.site/politica-de-privacidade.html</loc>
+        <lastmod>2026-04-29</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
     </url>
 
 </urlset>

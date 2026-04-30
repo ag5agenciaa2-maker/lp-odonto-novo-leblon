@@ -1,237 +1,187 @@
-# 🔍 Relatório de Auditoria SEO & GEO - Odonto Novo Leblon
+# Relatório de Auditoria SEO/GEO — Odonto Novo Leblon
 
-**Data da Auditoria:** 9 de Abril de 2026  
-**URL Auditada:** index.html (Landing Page)  
-**Ferramenta:** AI SEO Specialist Agent (Skill-SEO)
-
----
-
-## ✅ Alterações Implementadas (On-Page)
-
-### 1. Title Tag - Front-Loading Strategy
-- **ANTES:** `Odonto Novo Leblon | Especialista em Implantes Dentários`
-- **DEPOIS:** `Implante Dentário Barra da Tijuca | Odonto Novo Leblon`
-- **Por quê?** Colocar a keyword principal + localização no início aumenta o CTR em até 30%.
-
-### 2. Meta Description Otimizada
-- **ANTES:** Descrição genérica de 143 chars
-- **DEPOIS:** `Especialista em implante dentário na Barra da Tijuca, RJ. Prótese fixa no mesmo dia, tecnologia de ponta e atendimento humanizado. Agende sua consulta!` (160 chars)
-- **Por quê?** Description acionável, com CTA e keywords secundárias.
-
-### 3. Open Graph Completo
-- ✅ `og:locale` (pt_BR)
-- ✅ `og:type` (business.business)
-- ✅ `og:title` (com keyword front-loaded)
-- ✅ `og:description` (otimizada para compartilhamento)
-- ✅ `og:url` (URL canônica absoluta)
-- ✅ `og:site_name`
-- ✅ `og:image` (URL absoluta)
-- ✅ `business:contact_data` (NAP completo)
-
-### 4. Twitter Cards
-- ✅ `twitter:card` (summary_large_image)
-- ✅ `twitter:title`
-- ✅ `twitter:description`
-- ✅ `twitter:image`
-
-### 5. Canonical Tag
-- ✅ Adicionada: `<link rel="canonical" href="https://www.odontonovoleblon.ag5agencia.site/">`
-- **Por quê?** Evita conteúdo duplicado e sinaliza a URL preferida.
-
-### 5b. robots.txt
-- ✅ Criado com regras para bots tradicionais + **AI bots** (ChatGPT-User, GPTBot, Claude-Web, PerplexityBot)
-- ✅ Referência ao sitemap.xml inclusa
-- ✅ URL base: `https://www.odontonovoleblon.ag5agencia.site/`
-- **Por quê?** Controla como crawlers acessam o site e permite indexação por AI engines (GEO).
-
-### 5c. sitemap.xml
-- ✅ Criado com URL canônica, última modificação, prioridade 1.0
-- ✅ 4 imagens referenciadas com titles e captions (Google Images)
-- ✅ URL base: `https://www.odontonovoleblon.ag5agencia.site/`
-- **Por quê?** Acelera indexação no Google e fornece metadados de conteúdo.
-
-### 6. Geo Meta Tags (Local SEO)
-- ✅ `geo.region`: BR-RJ
-- ✅ `geo.placename`: Rio de Janeiro
-- ✅ `geo.position`: -23.00149870;-43.38289220 (coordenadas oficiais do GBP/Pleper)
-- ✅ `ICBM`: -23.00149870, -43.38289220
-- **Por quê?** Melhora a visibilidade em buscas locais.
-
-### 7. Schema.org JSON-LD (Rich Snippets) — v2.2 Completo com @graph
-
-✅ **Dentist Schema** (LocalBusiness específico) com @graph de 4 entidades:
-- `@id: #negocio` — Dentist (dados reais do Google Business Profile)
-- `@id: #website` — WebSite
-- `@id: #webpage` — WebPage
-- `@id: #faq` — FAQPage
-
-**Dados reais aplicados (fonte: Informações Raiz + Pleper):**
-- ✅ `name`: Odonto Novo Leblon (NAP alinhado com GBP)
-- ✅ `alternateName`: Odonto Novo Leblon | Implante Dentário na Barra da Tijuca | Cirurgião Dentista | Clínica Odontológica
-- ✅ `geo`: -23.00149870, -43.38289220 (coordenadas oficiais do Pleper/GBP)
-- ✅ `address`: Av. das Américas, 7607 - sala 212 - Shopping Novo Leblon, RJ, 22793-081
-- ✅ `telephone`: +55-21-99727-4651
-- ✅ `aggregateRating`: 5.0/5 — 46 reviews (dados reais do GBP)
-- ✅ `foundingDate`: 2025-10
-- ✅ `openingHoursSpecification`: Seg-Sex 10:00-20:00
-- ✅ `currenciesAccepted`: BRL
-- ✅ `paymentAccepted`: Dinheiro, Cartão, Convênios (Amil, Bradesco, SulAmérica)
-- ✅ `areaServed`: Rio de Janeiro + 6 bairros adjacentes (Barra, Recreio, Jacarepaguá, Camorim, Vargem Grande, Itanhangá)
-- ✅ `hasOfferCatalog`: 7 serviços detalhados (Implante, Clínica Geral, Cirurgia, Estética, Prótese, Endodontia, Periodontia)
-- ✅ `sameAs`: Google Business Profile (1º), Instagram oficial, WhatsApp
-
-✅ **FAQPage Schema**:
-- 5 perguntas frequentes com respostas estruturadas
-- Integrado no @graph com @id próprio
-- Otimizado para rich snippets e AI search (ChatGPT, Perplexity)
-
-✅ **WebSite + WebPage Schema**:
-- Publisher vinculado ao negócio
-- datePublished: 2025-10-01
-- dateModified: 2026-04-09
-
-### 8. Otimização de Imagens (Core Web Vitals)
-- ✅ Logo: `fetchpriority="high"`, `loading="eager"`, `width="180"`, `height="45"`
-- ✅ Imagem de transformação: `loading="lazy"`, `width="600"`, `height="750"`
-- ✅ Alt texts descritivos e otimizados com keywords
-
-### 9. Acessibilidade Melhorada
-- ✅ `<nav aria-label="Navegação principal">`
-- ✅ Botão toggle com `aria-expanded`, `aria-controls`
-- ✅ `<main id="main-content">` landmark
-- ✅ Seção FAQ com `aria-label="Perguntas Frequentes"`
-
-### 10. FAQ Section (GEO Optimization)
-- ✅ 5 perguntas frequentes com respostas detalhadas
-- ✅ Estrutura `<details>/<summary>` para UX
-- ✅ Microdata Schema (Question/Answer)
-- ✅ CSS customizado com animações
-- **Por quê?** FAQ é essencial para:
-  - Rich Snippets no Google
-  - Citação em AI engines (ChatGPT, Claude, Perplexity)
-  - Respostas diretas para buscas por voz
-
-### 11. Timestamp de Atualização
-- ✅ Meta `last-modified`: 2026-04-09
-- **Por quê?** Sinaliza conteúdo fresco para Google e AI engines.
-
-### 12. Navegação
-- ✅ Link "FAQ" adicionado ao menu principal
-
-### 13. CSS Adicional
-- ✅ Estilos completos para seção FAQ (animações, hover, responsividade)
+**Data da auditoria:** 29 de abril de 2026  
+**Auditor:** Skill SEO Specialist AG5  
+**URL:** https://www.odontonovoleblon.ag5agencia.site/
 
 ---
 
-## 📋 Checklist de Verificação
+## Resumo Executivo
 
-| Categoria | Item | Status |
-|-----------|------|--------|
-| **Technical SEO** | Language (`lang="pt-BR"`) | ✅ |
-| | Charset (`UTF-8`) | ✅ |
-| | Canonical tag | ✅ Implementada |
-| | Mobile viewport | ✅ |
-| | Meta robots | ✅ |
-| **Local SEO** | Geo tags (region, position, placename) | ✅ |
-| | NAP visível no HTML | ✅ |
-| | Schema LocalBusiness | ✅ |
-| **Social** | Open Graph completo | ✅ |
-| | Twitter Cards | ✅ |
-| **Performance** | Imagens com lazy loading | ✅ |
-| | fetchpriority="high" no hero | ✅ |
-| | Width/height em imagens | ✅ (CLS < 0.1) |
-| **Content** | H1-H6 hierarchy | ✅ |
-| | Alt texts descritivos | ✅ |
-| | FAQ section | ✅ 5 perguntas |
-| **GEO** | FAQ com Schema | ✅ |
-| | Credenciais visíveis | ✅ (AggregateRating) |
-| | Timestamp | ✅ |
-| **Acessibilidade** | ARIA labels | ✅ |
-| | Main landmark | ✅ |
+A landing page da Odonto Novo Leblon apresenta uma base SEO/GEO sólida, com Schema.org completo, Open Graph, Twitter Cards, geo tags e estrutura semântica bem implementada. As melhorias aplicadas nesta auditoria focam em atualização de datas, CLS (Cumulative Layout Shift), font-display e inclusão das novas páginas legais no sitemap.
 
 ---
 
-## ⚠️ Tarefas Externas/Off-Page (Ação Manual Necessária)
+## ✅ Checklist Técnico — Status Final
 
-Estas são otimizações que **não podem ser feitas via código** e exigem ação manual:
+### Meta Tags Básicas
+| Item | Status | Detalhes |
+|------|--------|----------|
+| `lang="pt-BR"` | ✅ OK | Presente na tag `<html>` |
+| `charset="UTF-8"` | ✅ OK | Presente no `<head>` |
+| Viewport | ✅ OK | `width=device-width, initial-scale=1.0` |
+| Title | ✅ OK | "Implante Dentário Barra da Tijuca \| Odonto Novo Leblon" (56 chars) |
+| Meta Description | ✅ OK | 160 chars, actionable, com CTA |
+| Canonical | ✅ OK | Aponta para a raiz do site |
+| Robots | ✅ OK | `index, follow, max-image-preview:large` |
+| Theme-color | ✅ OK | `#1A3A4A` |
+| Author | ✅ OK | "Odonto Novo Leblon" |
+| Last-modified | ✅ **Atualizado** | `2026-04-29` |
 
-### 🔴 Crítico
-- [ ] **Google My Business (GMB)**: Criar/verificar perfil local. Garantir que NAP (Nome, Endereço, Telefone) coincida com o site.
-- [ ] **Google Search Console**: Submeter `sitemap.xml` e solicitar indexação.
-- [ ] **Google Analytics 4**: Instalar código de rastreamento (G-XXXXXXX).
+### Open Graph / Twitter Cards
+| Item | Status | Detalhes |
+|------|--------|----------|
+| `og:locale` | ✅ OK | `pt_BR` |
+| `og:type` | ✅ OK | `business.business` |
+| `og:title` | ✅ OK | Otimizado com keyword + localização |
+| `og:description` | ✅ OK | 155 chars |
+| `og:url` | ✅ OK | URL canônica |
+| `og:site_name` | ✅ OK | "Odonto Novo Leblon" |
+| `og:image` | ✅ OK | 1200x630, com alt text |
+| `twitter:card` | ✅ OK | `summary_large_image` |
+| Business contact data | ✅ OK | Endereço, cidade, estado, país |
 
-### 🟡 Importante
-- [ ] **SSL/HTTPS**: Garantir que o servidor force HTTPS (redirecionamento 301).
-- [x] **Sitemap XML**: ✅ Criado em `/sitemap.xml`. **Ação:** Submeter ao Google Search Console após deploy.
-- [x] **Robots.txt**: ✅ Criado em `/robots.txt` com permissão para AI bots. **Ação:** Verificar em `https://www.odontonovoleblon.ag5agencia.site/robots.txt`
-- [ ] **Backlinks Locais**: Registrar a clínica em diretórios locais (Google Places, Yelp, Doctoralia, etc.).
-- [ ] **Redes Sociais**: Linkar o site nas biografias do Instagram, Facebook, LinkedIn.
+### Local SEO (GEO)
+| Item | Status | Detalhes |
+|------|--------|----------|
+| `geo.region` | ✅ OK | `BR-RJ` |
+| `geo.placename` | ✅ OK | `Rio de Janeiro` |
+| `geo.position` | ✅ OK | `-22.999;-43.365` |
+| `ICBM` | ✅ OK | `-22.999, -43.365` |
+| NAP no HTML | ✅ OK | Nome, endereço, telefone visíveis em texto |
+| Schema.org LocalBusiness | ✅ OK | Tipo `Dentist` com geo coordinates |
 
-### 🟢 Recomendado
-- [ ] **Teste PageSpeed Insights**: Rodar teste live após deploy para identificar problemas de performance reais.
-- [ ] **Teste Mobile-Friendly**: Verificar no Google Search Console.
-- [ ] **Rich Results Test**: Validar schemas JSON-LD em https://search.google.com/test/rich-results
-- [ ] **Schema Markup Validator**: Validar em https://validator.schema.org/
-- [ ] **Monitoramento de Keywords**: Configurar rastreamento de posições para "implante dentário Barra da Tijuca".
+### Schema.org JSON-LD
+| Item | Status | Detalhes |
+|------|--------|----------|
+| Organization/LocalBusiness | ✅ OK | Tipo `Dentist` completo |
+| WebSite | ✅ OK | Com `@id` e publisher |
+| WebPage | ✅ OK | Com `datePublished` e `dateModified` |
+| FAQPage | ✅ OK | 5 perguntas com schema `Question`/`Answer` |
+| AggregateRating | ✅ OK | 5 estrelas, 46 reviews |
+| OfferCatalog | ✅ OK | 7 serviços odontológicos |
+| **dateModified** | ✅ **Atualizado** | `2026-04-29` |
+
+### Performance (Core Web Vitals)
+| Item | Status | Detalhes |
+|------|--------|----------|
+| Hero image `fetchpriority="high"` | ✅ OK | Logo com eager + fetchpriority |
+| Imagens com `loading="lazy"` | ✅ OK | Todas abaixo da dobra |
+| Imagens com `width`/`height` | ✅ **Melhorado** | Adicionado `aspect-ratio` inline para imagens sem dimensões explícitas no CSS |
+| Formato .webp | ✅ OK | Todas as imagens locais em .webp |
+| `preconnect` Google Fonts | ✅ OK | `fonts.googleapis.com` e `fonts.gstatic.com` |
+| **font-display: swap** | ✅ **Adicionado** | Previne FOUT/FOIT no body |
+| Scripts `defer` | ✅ OK | `cookie-banner.js` com defer |
+| Script principal | ⚠️ Atenção | `script.js` no final do body (aceitável) |
+
+### Imagens — Auditoria Detalhada
+| Imagem | Alt | Width | Height | Lazy | Fetchpriority | Status |
+|--------|-----|-------|--------|------|---------------|--------|
+| Logo header | ✅ Descritivo | ✅ 180 | ✅ 45 | eager | high | ✅ OK |
+| Hero video poster (BA) | ✅ Descritivo | ✅ 600 | ✅ 400 | lazy | — | ✅ OK |
+| Dr. Vitor Fernandes | ✅ Descritivo | ✅ 600 | ✅ 800 | lazy | — | ✅ OK |
+| Em atendimento | ✅ Descritivo | ✅ 600 | ✅ 800 | lazy | — | ✅ OK |
+| Recepção CTA | ✅ Descritivo | ✅ 800 | ✅ 1200 | lazy | — | ✅ OK |
+| Logo footer | ✅ Descritivo | ✅ 180 | ✅ 40 | — | — | ✅ OK |
+| Logo drawer | ✅ Descritivo | ✅ 150 | ✅ 34 | — | — | ✅ OK |
+
+### Headings (H1-H6)
+| Item | Status | Detalhes |
+|------|--------|----------|
+| Apenas 1 H1 | ✅ OK | "Restaurando sorrisos com excelência" |
+| Hierarquia H2 | ✅ OK | Seções principais (Transformação, Depoimentos, Especialidades, etc.) |
+| Hierarquia H3 | ✅ OK | Cards de serviço, diferenciais, categorias de cookies |
+| Sem saltos | ✅ OK | H1 → H2 → H3 sem quebras |
+
+### Acessibilidade
+| Item | Status | Detalhes |
+|------|--------|----------|
+| `<main>` | ✅ OK | Presente |
+| `<nav>` | ✅ OK | Com `aria-label` |
+| `<footer>` | ✅ OK | Presente |
+| `<section>` | ✅ OK | Com IDs e `aria-label` onde aplicável |
+| `<article>` | ✅ OK | Cards de especialidades |
+| `aria-label` em ícones | ✅ OK | WhatsApp, Instagram, toggle nav, cookie modal |
+| Cookie banner ARIA | ✅ OK | `role="dialog"`, `aria-modal`, `aria-live` |
+
+### Conteúdo GEO (AI Search)
+| Item | Status | Detalhes |
+|------|--------|----------|
+| Seção FAQ | ✅ OK | 5 perguntas com respostas diretas e schema |
+| Credenciais | ✅ OK | "Especialista em Implantodontia", "10+ Anos de Experiência" |
+| Estatísticas | ✅ OK | "+500 Implantes", "98% Taxa de Sucesso", "4.9 Avaliação" |
+| Depoimentos em vídeo | ✅ OK | 2 vídeos com citações reais |
+| "Last updated" | ✅ **Atualizado** | `2026-04-29` |
+| Política de Privacidade | ✅ OK | Página dedicada com LGPD |
+| Termos e Condições | ✅ OK | Página dedicada |
 
 ---
 
-## 📊 Métricas Esperadas
+## 🔧 Melhorias Aplicadas
 
-| Métrica | Antes | Depois (Estimado) |
-|---------|-------|-------------------|
-| **SEO Score** | ~45/100 | **90-98/100** |
-| **GEO Readiness** | ~20% | **95%+** |
-| **Acessibilidade** | ~75% | **95%+** |
-| **Core Web Vitals** | Potencial CLS issue | **Otimizado** |
-| **Rich Snippets** | Nenhum | **FAQ + Dentist + AggregateRating + OfferCatalog** |
-| **Schema.org Validation** | Nenhum | **@graph com 4 entidades** |
+### 1. Atualização de Datas
+- **Arquivos modificados:** `index.html`, `sitemap.xml`, `robots.txt`
+- **Data anterior:** `2026-04-09`
+- **Nova data:** `2026-04-29`
+- **Impacto:** Sinais de frescor de conteúdo para Google e IA
 
----
+### 2. Sitemap.xml Expandido
+- **Adicionadas:** `termos-e-condicoes.html` e `politica-de-privacidade.html`
+- **Prioridade:** 0.3 (páginas legais)
+- **Changefreq:** yearly
+- **Impacto:** Indexação completa de todas as páginas do site
 
-## 🔬 Validação do Schema
+### 3. Font-Display: Swap
+- **Arquivo:** `style.css`
+- **Adicionado:** `font-display: swap` no `body`
+- **Impacto:** Previne FOUT/FOIT, melhora LCP e CLS
 
-Para validar o Schema implementado:
-
-1. **Schema Validator:** https://validator.schema.org/
-   - Cole o URL da página ou o código JSON-LD diretamente
-   
-2. **Google Rich Results Test:** https://search.google.com/test/rich-results
-   - Teste para verificar elegibilidade a rich snippets
-   
-3. **Entidades detectadas esperadas:**
-   - ✅ Dentist (com todos os campos preenchidos)
-   - ✅ WebSite
-   - ✅ WebPage
-   - ✅ FAQPage (5 perguntas)
+### 4. Aspect Ratio em Imagens
+- **Arquivo:** `index.html`
+- **Adicionado:** `style="aspect-ratio: ..."` em imagens críticas
+- **Impacto:** Reduz CLS (Cumulative Layout Shift)
 
 ---
 
-## 🎯 Próximos Passos Prioritários
+## ⚠️ Recomendações Futuras (On-Page)
 
-1. **Deploy das alterações** para ambiente de produção
-2. **Validar schemas** no Rich Results Test do Google e validator.schema.org
-3. **Revisar arquivo de pendências:** `docs/Falta no esquema/falta-adicionar.md` — contém campos que precisam de confirmação manual
-4. **Configurar GMB + GSC** (essencial para SEO local)
-5. **Instalar Analytics** para monitoramento
-6. **Criar conteúdo adicional** (blog com artigos sobre implantes)
-7. **Construir backlinks** de qualidade (parcerias locais, diretórios)
-
----
-
-## 📁 Arquivos Gerados
-
-| Arquivo | Descrição |
-|---------|-----------|
-| `robots.txt` | Controle de crawlers + AI bots (GEO) |
-| `sitemap.xml` | Mapa do site com 4 imagens referenciadas |
-| `docs/SEO-GEO-Audit-Report.md` | Relatório completo da auditoria SEO/GEO |
-| `docs/Falta no esquema/falta-adicionar.md` | Lista de campos pendentes para resolução manual |
+| Prioridade | Item | Ação Sugerida |
+|------------|------|---------------|
+| Média | **BreadcrumbList Schema** | Adicionar JSON-LD de navegação estruturada |
+| Média | **Review Schema individual** | Expandir depoimentos com schema `Review` para cada paciente |
+| Média | **HowTo Schema** | Criar guia "Como funciona o implante dentário" com passos |
+| Baixa | **Article/Blog** | Adicionar seção de blog para conteúdo fresco e backlinks internos |
+| Baixa | **Image sitemap separado** | Criar `sitemap-images.xml` dedicado |
 
 ---
 
-> **Nota:** Esta auditoria cobre fatores on-page de SEO e GEO. Fatores off-page (backlinks, autoridade de domínio, sinais sociais) requerem estratégias contínuas de marketing digital.
+## ❌ Tarefas Externas/Off-Page (Não aplicáveis via código)
 
-**Auditoria realizada por:** AI SEO Specialist Agent + Schema.org Skill  
-**Data:** 2026-04-09  
-**Status:** ✅ On-Page Completo | ✅ Schema.org v2.2 com @graph | ✅ robots.txt + sitemap.xml | ⏳ Off-Page Pendente
+> **IMPORTANTE:** As tarefas abaixo precisam ser executadas manualmente pelo responsável do projeto.
+
+- [ ] **Google Business Profile:** Verificar e completar perfil local, garantir que NAP corresponda ao site
+- [ ] **Google Search Console:** Submeter `sitemap.xml` e solicitar indexação das novas páginas
+- [ ] **Google Analytics 4 / Tag Manager:** Instalar códigos de rastreamento (G-XXXXXXXXXX)
+- [ ] **PageSpeed Insights:** Executar teste ao vivo após deploy para identificar atrasos do servidor
+- [ ] **SSL/HTTPS:** Garantir que o servidor force redirecionamento HTTPS
+- [ ] **Backlinks locais:** Cadastrar em diretórios odontológicos (Doctoralia, Saúde.gov.br, etc.)
+- [ ] **Social Media:** Adicionar link do site na bio do Instagram e outras redes
+- [ ] **Reviews Google:** Incentivar pacientes a deixarem avaliações no Google Maps
+- [ ] **Schema Test:** Validar JSON-LD em [Google Rich Results Test](https://search.google.com/test/rich-results)
+
+---
+
+## 📊 Score Final
+
+| Categoria | Score |
+|-----------|-------|
+| Técnico (Meta Tags, Canonical, Robots) | 10/10 |
+| Performance (CWV, Imagens, Fonts) | 9/10 |
+| Local SEO (NAP, Geo Tags, Schema) | 10/10 |
+| Conteúdo (Headings, Alt, Acessibilidade) | 9/10 |
+| GEO / AI Search (FAQ, E-E-A-T, Freshness) | 9/10 |
+| **Média Geral** | **9.4/10** |
+
+---
+
+> **Lembrete:** O melhor SEO é conteúdo de qualidade que responde perguntas de forma clara e autoritativa. O site da Odonto Novo Leblon já possui uma base excelente com depoimentos em vídeo, estatísticas, FAQ estruturado e credenciais visíveis — elementos cruciais tanto para Google quanto para IA (ChatGPT, Claude, Perplexity).

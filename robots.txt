@@ -1,7 +1,7 @@
 # ============================================
 # robots.txt — Odonto Novo Leblon
 # URL: https://www.odontonovoleblon.ag5agencia.site/
-# Última atualização: 2026-04-09
+# Última atualização: 2026-04-29
 # ============================================
 
 # Regras para todos os crawlers

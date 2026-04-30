@@ -48,6 +48,12 @@ class Navigation {
         this.navMenu = document.getElementById('navMenu');
         this.navLinks = document.querySelectorAll('.nav-link');
         
+        // Drawer elements
+        this.drawer = document.getElementById('drawer');
+        this.drawerOverlay = document.getElementById('drawerOverlay');
+        this.drawerClose = document.getElementById('drawerClose');
+        this.drawerLinks = document.querySelectorAll('.drawer-link');
+        
         this.init();
     }
     
@@ -55,23 +61,41 @@ class Navigation {
         // Scroll effect na navegação
         window.addEventListener('scroll', throttle(() => this.handleScroll(), 100));
         
-        // Toggle do menu mobile
+        // Toggle do menu mobile (abre o Drawer)
         if (this.navToggle) {
-            this.navToggle.addEventListener('click', () => this.toggleMenu());
+            this.navToggle.addEventListener('click', () => this.openDrawer());
         }
         
-        // Fechar menu ao clicar em link
+        // Fechar Drawer
+        if (this.drawerClose) {
+            this.drawerClose.addEventListener('click', () => this.closeDrawer());
+        }
+        
+        if (this.drawerOverlay) {
+            this.drawerOverlay.addEventListener('click', () => this.closeDrawer());
+        }
+        
+        // Fechar menu ao clicar em link (Desktop)
         this.navLinks.forEach(link => {
             link.addEventListener('click', (e) => this.handleLinkClick(e));
+        });
+        
+        // Fechar Drawer ao clicar em link (Mobile)
+        this.drawerLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                this.closeDrawer();
+                this.handleLinkClick(e);
+            });
         });
         
         // Fechar menu ao clicar fora
         document.addEventListener('click', (e) => this.handleOutsideClick(e));
         
-        // Tecla ESC fecha menu
+        // Tecla ESC fecha menu e drawer
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && this.navMenu.classList.contains('active')) {
+            if (e.key === 'Escape') {
                 this.closeMenu();
+                this.closeDrawer();
             }
         });
     }
@@ -86,6 +110,18 @@ class Navigation {
         }
     }
     
+    openDrawer() {
+        if (this.drawer) this.drawer.classList.add('active');
+        if (this.drawerOverlay) this.drawerOverlay.classList.add('active');
+        document.body.classList.add('no-scroll');
+    }
+    
+    closeDrawer() {
+        if (this.drawer) this.drawer.classList.remove('active');
+        if (this.drawerOverlay) this.drawerOverlay.classList.remove('active');
+        document.body.classList.remove('no-scroll');
+    }
+    
     toggleMenu() {
         this.navMenu.classList.toggle('active');
         this.navToggle.classList.toggle('active');
@@ -93,8 +129,8 @@ class Navigation {
     }
     
     closeMenu() {
-        this.navMenu.classList.remove('active');
-        this.navToggle.classList.remove('active');
+        if (this.navMenu) this.navMenu.classList.remove('active');
+        if (this.navToggle) this.navToggle.classList.remove('active');
         document.body.classList.remove('menu-open');
     }
     
@@ -102,7 +138,7 @@ class Navigation {
         this.closeMenu();
         
         // Smooth scroll para seção
-        const href = e.target.getAttribute('href');
+        const href = e.currentTarget.getAttribute('href');
         if (href && href.startsWith('#')) {
             e.preventDefault();
             const target = document.querySelector(href);
@@ -117,7 +153,7 @@ class Navigation {
     }
     
     handleOutsideClick(e) {
-        if (this.navMenu.classList.contains('active') && 
+        if (this.navMenu && this.navMenu.classList.contains('active') && 
             !this.nav.contains(e.target)) {
             this.closeMenu();
         }
@@ -603,6 +639,54 @@ class Accessibility {
 }
 
 // ============================================
+// WHATSAPP PREMIUM EXPERIENCE
+// ============================================
+
+function initWaPremium() {
+    const bubble = document.getElementById('wa-message-bubble');
+    const typing = document.getElementById('wa-typing');
+    const realMessage = document.getElementById('wa-real-message');
+    const badge = document.getElementById('wa-notification');
+    const closeBtn = document.getElementById('wa-close-btn');
+    const mainBtn = document.getElementById('wa-main-btn');
+
+    if (!bubble || !typing || !realMessage || !badge || !closeBtn || !mainBtn) return;
+
+    // 1. Mostrar o balão após 6 segundos
+    setTimeout(() => {
+        bubble.classList.add('show');
+        
+        // 2. Simular digitação por 2.5 segundos antes de mostrar a mensagem
+        setTimeout(() => {
+            typing.style.display = 'none';
+            realMessage.style.display = 'block';
+            realMessage.style.opacity = '0';
+            realMessage.style.transition = 'opacity 0.5s ease';
+            setTimeout(() => {
+                realMessage.style.opacity = '1';
+            }, 50);
+        }, 2500);
+
+    }, 6000);
+
+    // Fechar balão
+    closeBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        bubble.classList.remove('show');
+        // Mostrar notificação após fechar para manter engajamento
+        setTimeout(() => {
+            badge.classList.add('show');
+        }, 2000);
+    });
+
+    // Ao clicar no botão, remove tudo
+    mainBtn.addEventListener('click', () => {
+        bubble.classList.remove('show');
+        badge.classList.remove('show');
+    });
+}
+
+// ============================================
 // INICIALIZAÇÃO
 // ============================================
 
@@ -630,6 +714,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Inicializar acessibilidade
     new Accessibility();
+
+    // Inicializar WhatsApp Premium
+    initWaPremium();
     
     // Adicionar classe ao body para animação inicial
     document.body.classList.add('loaded');
@@ -683,3 +770,48 @@ window.formatPhone = (value) => {
     }
     return value;
 };
+
+// ============================================
+// FORMULÁRIO CTA — REDIRECIONAMENTO WHATSAPP
+// ============================================
+document.addEventListener('DOMContentLoaded', function () {
+    const ctaForm = document.getElementById('ctaForm');
+    if (!ctaForm) return;
+
+    ctaForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const nome = document.getElementById('formNome').value.trim();
+        const email = document.getElementById('formEmail').value.trim();
+        const telefone = document.getElementById('formTelefone').value.trim();
+        const motivo = document.getElementById('formMotivo').value;
+        const mensagem = document.getElementById('formMensagem').value.trim();
+
+        let texto = `Olá, me chamo ${nome}, vim através do site e gostaria de uma informação.`;
+        texto += `\n\n- E-mail: ${email}`;
+        texto += `\n- Telefone: ${telefone}`;
+        texto += `\n- Serviço: ${motivo}`;
+        if (mensagem) {
+            texto += `\n- Situação: ${mensagem}`;
+        }
+
+        const numeroWhatsApp = '5521997274651';
+        const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(texto)}`;
+        window.open(url, '_blank');
+    });
+
+    // Máscara simples para telefone
+    const telInput = document.getElementById('formTelefone');
+    if (telInput) {
+        telInput.addEventListener('input', function (e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 11) value = value.slice(0, 11);
+            if (value.length > 6) {
+                value = `(${value.slice(0, 2)}) ${value.slice(2, 7)}-${value.slice(7)}`;
+            } else if (value.length > 2) {
+                value = `(${value.slice(0, 2)}) ${value.slice(2)}`;
+            }
+            e.target.value = value;
+        });
+    }
+});
