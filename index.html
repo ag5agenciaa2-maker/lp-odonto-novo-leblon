@@ -470,6 +470,11 @@
                                 Seu navegador não suporta vídeos.
                             </video>
                         </div>
+                        <div id="video1-cta-jose" class="dep-video-cta-wrapper" style="display: none; margin-top: 15px;">
+                            <a href="https://wa.me/5521997274651?text=Ol%C3%A1%2C%20assisti%20o%20v%C3%ADdeo%20do%20Sr.%20Jos%C3%A9%20e%20gostaria%20de%20marcar%20uma%20avalia%C3%A7%C3%A3o." class="btn btn-primary" style="width: 100%; justify-content: center;">
+                                Quero um Sorriso como o do Sr. José
+                            </a>
+                        </div>
                         <div class="dep-video-info">
                             <blockquote class="dep-quote">
                                 "Superou todas as minhas expectativas em cada detalhe."
@@ -1364,6 +1369,28 @@
             var overlay = document.getElementById('depRevealOverlay');
             if (overlay) {
                 overlay.addEventListener('click', revelarVideo);
+            }
+
+            /* Controle do Vídeo 1 (Sr. José) */
+            var v1 = document.getElementById('video1');
+            var ctaV1 = document.getElementById('video1-cta-jose');
+            if (v1 && ctaV1) {
+                var pausedAt15 = false;
+                v1.addEventListener('timeupdate', function() {
+                    // Pausa automática aos 15 segundos (uma única vez)
+                    if (v1.currentTime >= 15 && !pausedAt15 && !v1.paused) {
+                        v1.pause();
+                        pausedAt15 = true;
+                    }
+                    
+                    // Exibição do botão aos 20 segundos de vídeo
+                    if (v1.currentTime >= 20) {
+                        if (ctaV1.style.display === 'none') {
+                            ctaV1.style.display = 'block';
+                            ctaV1.style.animation = 'fadeInUp 0.6s ease forwards';
+                        }
+                    }
+                });
             }
         });
     </script>
