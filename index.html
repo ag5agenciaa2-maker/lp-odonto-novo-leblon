@@ -1375,14 +1375,7 @@
             var v1 = document.getElementById('video1');
             var ctaV1 = document.getElementById('video1-cta-jose');
             if (v1 && ctaV1) {
-                var pausedAt15 = false;
                 v1.addEventListener('timeupdate', function() {
-                    // Pausa automática aos 15 segundos (uma única vez)
-                    if (v1.currentTime >= 15 && !pausedAt15 && !v1.paused) {
-                        v1.pause();
-                        pausedAt15 = true;
-                    }
-                    
                     // Exibição do botão aos 20 segundos de vídeo
                     if (v1.currentTime >= 20) {
                         if (ctaV1.style.display === 'none') {
