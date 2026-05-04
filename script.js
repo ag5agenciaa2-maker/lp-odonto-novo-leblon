@@ -54,6 +54,9 @@ class Navigation {
         this.drawerClose = document.getElementById('drawerClose');
         this.drawerLinks = document.querySelectorAll('.drawer-link');
         
+        // Scroll direction tracking
+        this.lastScrollY = window.scrollY;
+        
         this.init();
     }
     
@@ -103,11 +106,28 @@ class Navigation {
     handleScroll() {
         const scrollY = window.scrollY;
         
+        // Efeito de sombra/background
         if (scrollY > 50) {
             this.nav.classList.add('scrolled');
         } else {
             this.nav.classList.remove('scrolled');
         }
+
+        // Lógica de esconder ao descer e mostrar ao subir (apenas mobile/pequenas telas)
+        if (window.innerWidth <= 768) {
+            if (scrollY > this.lastScrollY && scrollY > 100) {
+                // Descendo - Esconde
+                this.nav.style.transform = 'translateY(-100%)';
+            } else {
+                // Subindo - Mostra
+                this.nav.style.transform = 'translateY(0)';
+            }
+        } else {
+            // Garante que no desktop o menu esteja sempre visível
+            this.nav.style.transform = 'translateY(0)';
+        }
+        
+        this.lastScrollY = scrollY;
     }
     
     openDrawer() {
