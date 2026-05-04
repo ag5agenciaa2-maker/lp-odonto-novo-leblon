@@ -827,7 +827,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const motivo = document.getElementById('formMotivo').value;
         const mensagem = document.getElementById('formMensagem').value.trim();
 
-        let texto = `Olá, me chamo ${nome}, vim através do site [Formulário CTA - Agendar Consulta] - gostaria de agendar uma consulta.`;
+        let texto = `Olá, me chamo ${nome}, vim através do site e gostaria de uma informação.`;
         texto += `\n\n- E-mail: ${email}`;
         texto += `\n- Telefone: ${telefone}`;
         texto += `\n- Serviço: ${motivo}`;

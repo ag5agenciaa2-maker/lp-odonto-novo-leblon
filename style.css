@@ -1262,7 +1262,7 @@ button {
 }
 
 .footer-brand .footer-logo img {
-    max-width: 90px;
+    max-width: 80px;
     height: auto;
     object-fit: contain;
 }
@@ -3022,5 +3022,8 @@ body.no-scroll {
 @media (max-width: 768px) {
     .v-modal-container {
         height: 80vh;
+    }
+    .footer-brand .footer-logo img {
+        max-width: 70px;
     }
 }
