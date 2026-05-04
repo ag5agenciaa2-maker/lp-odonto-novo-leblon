@@ -241,22 +241,27 @@ button {
 
 @media (max-width: 768px) {
     .nav {
-        top: 15px;
-        left: 15px;
-        right: 15px;
-        width: calc(100% - 30px);
+        top: 15px !important;
+        left: 10px !important;
+        right: 10px !important;
+        width: auto !important;
         border-radius: 50px;
         padding: 8px 0;
-        background: rgba(255, 255, 255, 0.8);
+        background: rgba(255, 255, 255, 0.85) !important;
         backdrop-filter: blur(15px);
         -webkit-backdrop-filter: blur(15px);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        margin: 0 !important;
     }
 
     .nav.scrolled {
-        top: 10px;
+        top: 10px !important;
         padding: 6px 0;
+    }
+
+    .hero {
+        padding: 160px 0 60px !important;
     }
 
     .logo-image {
