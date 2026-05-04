@@ -465,28 +465,34 @@
             <div class="container">
                 <div class="faceta-grid">
                     <div class="faceta-content">
-                    <!-- Vídeo Mobile (vísivel apenas no mobile, antes do título) -->
-                    <div class="faceta-video-mobile">
-                        <div class="faceta-video-wrapper" onclick="togglePlay(this, event)">
-                            <video preload="metadata" class="faceta-video">
-                                <source src="https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/69f2b30ee84e52bef4d91a27.mp4" type="video/mp4">
-                                Seu navegador não suporta vídeos.
-                            </video>
-                            <div class="play-overlay">
-                                <div class="play-icon">
-                                    <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
-                                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                                    </svg>
+                        <!-- Vídeo Mobile (vísivel apenas no mobile, antes do título) -->
+                        <div class="faceta-video-mobile">
+                            <div class="faceta-video-wrapper" onclick="togglePlay(this, event)">
+                                <video preload="metadata" class="faceta-video">
+                                    <source src="https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/69f2b30ee84e52bef4d91a27.mp4" type="video/mp4">
+                                    Seu navegador não suporta vídeos.
+                                </video>
+                                <div class="play-overlay">
+                                    <div class="play-icon">
+                                        <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                        </svg>
+                                    </div>
                                 </div>
+                                <button class="btn-amplify" aria-label="Ampliar vídeo" onclick="openVideoModal('https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/69f2b30ee84e52bef4d91a27.mp4', null, event)">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                                    </svg>
+                                </button>
                             </div>
-                            <!-- Botão de Ampliar Customizado -->
-                            <button class="btn-amplify" aria-label="Ampliar vídeo" onclick="openVideoModal('https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/69f2b30ee84e52bef4d91a27.mp4', null, event)">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
-                                </svg>
-                            </button>
+                            <!-- Botão Temporizado Mobile -->
+                            <div id="faceta-cta-mobile" class="faceta-video-cta" style="display: none; margin-top: 20px; text-align: center;">
+                                <a href="https://wa.me/5521997274651?text=Ol%C3%A1%2C%20assisti%20o%20v%C3%ADdeo%20sobre%20naturalidade%20e%20gostaria%20de%20agendar%20minha%20avalia%C3%A7%C3%A3o." class="btn btn-primary" target="_blank">
+                                    Agendar minha avaliação
+                                </a>
+                            </div>
                         </div>
-                    </div>
+
                         <div class="section-eyebrow">Naturalidade Importa</div>
                         <h2 class="section-title">O Cuidado Contra o<br><span class="title-highlight">Efeito Artificial</span></h2>
                         <div class="faceta-description">
@@ -500,31 +506,37 @@
                                 que sempre deveria ter sido seu.
                             </p>
                             <p>Assista ao vídeo para entender como evitamos resultados artificiais em nossas lentes e facetas.</p>
-                        <div class="faceta-actions" style="margin-top: 2rem;">
-                            <a href="https://wa.me/5521997274651?text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20site%20e%20gostaria%20de%20agendar%20minha%20avalia%C3%A7%C3%A3o%20para%20facetase%20est%C3%A9tica%20dental." class="btn btn-primary" target="_blank">Agendar minha avaliação</a>
                         </div>
                     </div>
-                </div>
-                <div class="faceta-visual">
-                    <div class="faceta-video-wrapper" onclick="togglePlay(this, event)">
-                        <video preload="metadata" class="faceta-video">
-                            <source src="https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/69f2b30ee84e52bef4d91a27.mp4" type="video/mp4">
-                            Seu navegador não suporta vídeos.
-                        </video>
-                        <div class="play-overlay">
-                            <div class="play-icon">
-                                <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
-                                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                                </svg>
+
+                    <div class="faceta-visual">
+                        <div class="faceta-video-container">
+                            <div class="faceta-video-wrapper" onclick="togglePlay(this, event)">
+                                <video preload="metadata" class="faceta-video" id="faceta-video-main">
+                                    <source src="https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/69f2b30ee84e52bef4d91a27.mp4" type="video/mp4">
+                                    Seu navegador não suporta vídeos.
+                                </video>
+                                <div class="play-overlay">
+                                    <div class="play-icon">
+                                        <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <button class="btn-amplify" aria-label="Ampliar vídeo" onclick="openVideoModal('https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/69f2b30ee84e52bef4d91a27.mp4', null, event)">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                                    </svg>
+                                </button>
+                                <div class="faceta-accent"></div>
+                            </div>
+                            <!-- Botão Temporizado Desktop -->
+                            <div id="faceta-cta-desktop" class="faceta-video-cta" style="display: none; margin-top: 30px; text-align: center;">
+                                <a href="https://wa.me/5521997274651?text=Ol%C3%A1%2C%20assisti%20o%20v%C3%ADdeo%20sobre%20naturalidade%20e%20gostaria%20de%20agendar%20minha%20avalia%C3%A7%C3%A3o." class="btn btn-primary" target="_blank">
+                                    Agendar minha avaliação
+                                </a>
                             </div>
                         </div>
-                        <!-- Botão de Ampliar Customizado -->
-                        <button class="btn-amplify" aria-label="Ampliar vídeo" onclick="openVideoModal('https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/69f2b30ee84e52bef4d91a27.mp4', null, event)">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
-                            </svg>
-                        </button>
-                        <div class="faceta-accent"></div>
                     </div>
                 </div>
             </div>
@@ -1478,6 +1490,26 @@
                 // Revelar o vídeo 2 (da direita) quando o vídeo 1 terminar
                 v1.addEventListener('ended', function() {
                     revelarVideo();
+                });
+            }
+
+            /* Controle do Vídeo de Naturalidade (Faceta Artificial) */
+            var vFaceta = document.getElementById('faceta-video-main');
+            var ctaFacetaD = document.getElementById('faceta-cta-desktop');
+            var ctaFacetaM = document.getElementById('faceta-cta-mobile');
+            
+            if (vFaceta) {
+                vFaceta.addEventListener('timeupdate', function() {
+                    if (vFaceta.currentTime >= 26) {
+                        if (ctaFacetaD && ctaFacetaD.style.display === 'none') {
+                            ctaFacetaD.style.display = 'block';
+                            ctaFacetaD.style.animation = 'fadeInUp 0.6s ease forwards';
+                        }
+                        if (ctaFacetaM && ctaFacetaM.style.display === 'none') {
+                            ctaFacetaM.style.display = 'block';
+                            ctaFacetaM.style.animation = 'fadeInUp 0.6s ease forwards';
+                        }
+                    }
                 });
             }
         });
