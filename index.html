@@ -468,7 +468,7 @@
                         <!-- Vídeo Mobile (vísivel apenas no mobile, antes do título) -->
                         <div class="faceta-video-mobile">
                             <div class="faceta-video-wrapper" onclick="togglePlay(this, event)">
-                                <video preload="metadata" class="faceta-video">
+                                <video preload="metadata" class="faceta-video" id="faceta-video-mobile-src">
                                     <source src="https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/69f2b30ee84e52bef4d91a27.mp4" type="video/mp4">
                                     Seu navegador não suporta vídeos.
                                 </video>
@@ -1494,22 +1494,28 @@
             }
 
             /* Controle do Vídeo de Naturalidade (Faceta Artificial) */
-            var vFaceta = document.getElementById('faceta-video-main');
+            var vFacetaD = document.getElementById('faceta-video-main');
+            var vFacetaM = document.getElementById('faceta-video-mobile-src');
             var ctaFacetaD = document.getElementById('faceta-cta-desktop');
             var ctaFacetaM = document.getElementById('faceta-cta-mobile');
             
-            if (vFaceta) {
-                vFaceta.addEventListener('timeupdate', function() {
-                    if (vFaceta.currentTime >= 26) {
-                        if (ctaFacetaD && ctaFacetaD.style.display === 'none') {
-                            ctaFacetaD.style.display = 'block';
-                            ctaFacetaD.style.animation = 'fadeInUp 0.6s ease forwards';
-                        }
-                        if (ctaFacetaM && ctaFacetaM.style.display === 'none') {
-                            ctaFacetaM.style.display = 'block';
-                            ctaFacetaM.style.animation = 'fadeInUp 0.6s ease forwards';
-                        }
+            function handleFacetaTime(v, cta) {
+                if (v.currentTime >= 26) {
+                    if (cta && cta.style.display === 'none') {
+                        cta.style.display = 'flex';
+                        cta.style.animation = 'fadeInUp 0.6s ease forwards';
                     }
+                }
+            }
+
+            if (vFacetaD) {
+                vFacetaD.addEventListener('timeupdate', function() {
+                    handleFacetaTime(vFacetaD, ctaFacetaD);
+                });
+            }
+            if (vFacetaM) {
+                vFacetaM.addEventListener('timeupdate', function() {
+                    handleFacetaTime(vFacetaM, ctaFacetaM);
                 });
             }
         });
