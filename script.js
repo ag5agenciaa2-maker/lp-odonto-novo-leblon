@@ -117,7 +117,7 @@ class Navigation {
         if (window.innerWidth <= 768) {
             if (scrollY > this.lastScrollY && scrollY > 100) {
                 // Descendo - Esconde
-                this.nav.style.transform = 'translateY(-100%)';
+                this.nav.style.transform = 'translateY(-150%)';
             } else {
                 // Subindo - Mostra
                 this.nav.style.transform = 'translateY(0)';
@@ -217,14 +217,20 @@ class ScrollAnimations {
             '.especialidade-card',
             '.sobre-content',
             '.contato-info',
-            '.cta-content'
+            '.cta-content',
+            '.faq-list'
         ];
         
         selectors.forEach(selector => {
             const elements = document.querySelectorAll(selector);
             elements.forEach((el, index) => {
                 el.classList.add('animate-on-scroll');
-                el.style.transitionDelay = `${index * 100}ms`;
+                
+                // Se houver delay definido no HTML (data-delay), usa ele. Caso contrário, usa o index.
+                const customDelay = el.getAttribute('data-delay');
+                const delay = customDelay !== null ? parseInt(customDelay) : (index * 100);
+                
+                el.style.transitionDelay = `${delay}ms`;
                 this.observer.observe(el);
             });
         });
