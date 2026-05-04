@@ -1500,7 +1500,7 @@
             var ctaFacetaM = document.getElementById('faceta-cta-mobile');
             
             function handleFacetaTime(v, cta) {
-                if (v.currentTime >= 26) {
+                if (v.currentTime >= 27) {
                     if (cta && cta.style.display === 'none') {
                         cta.style.display = 'flex';
                         cta.style.animation = 'fadeInUp 0.6s ease forwards';
@@ -1532,10 +1532,16 @@
                 </svg>
             </button>
             <div class="v-modal-content">
-                <video id="modalVideo" controls playsinline ontimeupdate="checkVideoLimit(this, currentVideoLimit)">
+                <video id="modalVideo" controls playsinline>
                     <source src="" type="video/mp4">
                     Seu navegador não suporta vídeos.
                 </video>
+                <!-- Botão Overlay no Modal -->
+                <div id="modal-video-cta" class="faceta-video-cta-overlay" style="display: none;">
+                    <a href="https://wa.me/5521997274651?text=Ol%C3%A1%2C%20assisti%20o%20v%C3%ADdeo%20sobre%20naturalidade%20e%20gostaria%20de%20agendar%20minha%20avalia%C3%A7%C3%A3o." class="btn btn-primary" target="_blank">
+                        Agendar minha avaliação
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -1547,8 +1553,15 @@
             if (e) e.stopPropagation();
             const modal = document.getElementById('videoModal');
             const video = document.getElementById('modalVideo');
+            const modalCta = document.getElementById('modal-video-cta');
             
-            // Pausa todos os outros vídeos da página antes de abrir o modal
+            // Resetar CTA
+            if (modalCta) {
+                modalCta.style.display = 'none';
+                modalCta.style.animation = 'none';
+            }
+
+            // Pausa todos os outros vídeos da página
             document.querySelectorAll('video:not(#modalVideo)').forEach(v => {
                 v.pause();
                 const container = v.closest('.dep-video-frame, .faceta-video-wrapper');
@@ -1556,7 +1569,25 @@
             });
 
             currentVideoLimit = limit;
-            video.src = src; // Mais robusto que source.src
+            video.src = src;
+            
+            // Controle de tempo dentro do modal
+            video.ontimeupdate = function() {
+                // Checar limite (para vídeos de depoimento)
+                if (currentVideoLimit && video.currentTime >= currentVideoLimit) {
+                    video.pause();
+                    video.currentTime = currentVideoLimit;
+                }
+                
+                // Checar se é o vídeo de naturalidade (Faceta) e mostrar botão aos 27s
+                if (src.includes('69f2b30ee84e52bef4d91a27.mp4') && video.currentTime >= 27) {
+                    if (modalCta && modalCta.style.display === 'none') {
+                        modalCta.style.display = 'flex';
+                        modalCta.style.animation = 'fadeInUp 0.6s ease forwards';
+                    }
+                }
+            };
+
             video.load();
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
