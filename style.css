@@ -3124,4 +3124,11 @@ body.no-scroll {
     .footer-brand .footer-logo img {
         max-width: 60px;
     }
+
+    /* Ajuste da tag Antes/Depois no Mobile */
+    .ba-tag.before {
+        top: 42% !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+    }
 }
