@@ -321,7 +321,7 @@ button {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 100px 0 var(--space-16);
+    padding: 140px 0 var(--space-16);
     background: linear-gradient(135deg, var(--color-cream) 0%, var(--color-white) 100%);
     position: relative;
     overflow: hidden;
@@ -2498,6 +2498,24 @@ button {
     overflow: hidden;
     z-index: 2;
     background: var(--color-primary-dark);
+}
+
+.faceta-video-cta-overlay {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+}
+
+.faceta-video-cta-overlay .btn {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    white-space: nowrap;
+    width: auto;
+    padding: 1rem 2rem;
 }
 
 .faceta-video-mobile {
