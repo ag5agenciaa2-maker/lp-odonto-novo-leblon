@@ -681,30 +681,29 @@ function initWaPremium() {
             if (rect.top + (rect.height / 2) < window.innerHeight) {
                 mainBtn.classList.add('visible');
                 window.removeEventListener('scroll', handleWaScroll);
+
+                // 2. Mostrar o popup de mensagem 30 segundos APÓS o botão aparecer
+                setTimeout(() => {
+                    // Se o usuário já fechou o balão antes dele abrir (caso improvável mas possível via código), não abre
+                    if (!bubble.classList.contains('show')) {
+                        bubble.classList.add('show');
+                        
+                        // Simular digitação por 2.5 segundos antes de mostrar a mensagem
+                        setTimeout(() => {
+                            typing.style.display = 'none';
+                            realMessage.style.display = 'block';
+                            realMessage.style.opacity = '0';
+                            realMessage.style.transition = 'opacity 0.5s ease';
+                            setTimeout(() => {
+                                realMessage.style.opacity = '1';
+                            }, 50);
+                        }, 2500);
+                    }
+                }, 30000); // 30 segundos após o botão aparecer
             }
         }
     };
     window.addEventListener('scroll', handleWaScroll);
-
-    // 2. Mostrar o popup de mensagem após 30 segundos de navegação
-    setTimeout(() => {
-        // Se o usuário já fechou o balão antes dele abrir (caso improvável mas possível via código), não abre
-        if (!bubble.classList.contains('show')) {
-            bubble.classList.add('show');
-            
-            // Simular digitação por 2.5 segundos antes de mostrar a mensagem
-            setTimeout(() => {
-                typing.style.display = 'none';
-                realMessage.style.display = 'block';
-                realMessage.style.opacity = '0';
-                realMessage.style.transition = 'opacity 0.5s ease';
-                setTimeout(() => {
-                    realMessage.style.opacity = '1';
-                }, 50);
-            }, 2500);
-        }
-
-    }, 30000); // 30 segundos
 
     // Fechar balão
     closeBtn.addEventListener('click', (e) => {
