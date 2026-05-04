@@ -677,18 +677,20 @@ function initWaPremium() {
         const triggerSection = document.getElementById('faceta-artificial');
         if (triggerSection) {
             const rect = triggerSection.getBoundingClientRect();
-            // A seção passou da metade quando seu ponto central está acima da metade da tela
-            if (rect.top + (rect.height / 2) < window.innerHeight) {
+            
+            // 1. Mostrar o botão flutuante no meio da seção
+            if (rect.top + (rect.height / 2) < window.innerHeight && !mainBtn.classList.contains('visible')) {
                 mainBtn.classList.add('visible');
-                window.removeEventListener('scroll', handleWaScroll);
+            }
 
-                // 2. Mostrar o popup de mensagem 30 segundos APÓS o botão aparecer
+            // 2. Iniciar contagem de 30s para o pop-up APENAS APÓS passar o final da seção
+            if (rect.bottom < window.innerHeight && !bubble.dataset.timerStarted) {
+                bubble.dataset.timerStarted = "true";
+                
                 setTimeout(() => {
-                    // Se o usuário já fechou o balão antes dele abrir (caso improvável mas possível via código), não abre
                     if (!bubble.classList.contains('show')) {
                         bubble.classList.add('show');
                         
-                        // Simular digitação por 2.5 segundos antes de mostrar a mensagem
                         setTimeout(() => {
                             typing.style.display = 'none';
                             realMessage.style.display = 'block';
@@ -699,7 +701,9 @@ function initWaPremium() {
                             }, 50);
                         }, 2500);
                     }
-                }, 30000); // 30 segundos após o botão aparecer
+                }, 30000); // 30 segundos após passar da seção
+                
+                window.removeEventListener('scroll', handleWaScroll);
             }
         }
     };

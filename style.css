@@ -2503,15 +2503,16 @@ button {
 .faceta-video-cta-overlay {
     position: absolute;
     bottom: 60px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
+    right: 0;
     z-index: 10;
-    width: 90%;
     display: flex;
     justify-content: center;
+    pointer-events: none;
 }
 
 .faceta-video-cta-overlay .btn {
+    pointer-events: auto;
     box-shadow: 0 10px 30px rgba(0,0,0,0.4);
     white-space: nowrap;
     width: auto;
