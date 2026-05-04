@@ -467,7 +467,7 @@
                     <div class="faceta-content">
                     <!-- Vídeo Mobile (vísivel apenas no mobile, antes do título) -->
                     <div class="faceta-video-mobile">
-                        <div class="faceta-video-wrapper" onclick="togglePlay(this)">
+                        <div class="faceta-video-wrapper" onclick="togglePlay(this, event)">
                             <video preload="metadata" class="faceta-video">
                                 <source src="https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/69f2b30ee84e52bef4d91a27.mp4" type="video/mp4">
                                 Seu navegador não suporta vídeos.
@@ -480,7 +480,7 @@
                                 </div>
                             </div>
                             <!-- Botão de Ampliar Customizado -->
-                            <button class="btn-amplify" aria-label="Ampliar vídeo" onclick="openVideoModal('https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/69f2b30ee84e52bef4d91a27.mp4')">
+                            <button class="btn-amplify" aria-label="Ampliar vídeo" onclick="openVideoModal('https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/69f2b30ee84e52bef4d91a27.mp4', null, event)">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
                                 </svg>
@@ -506,7 +506,7 @@
                     </div>
                 </div>
                 <div class="faceta-visual">
-                    <div class="faceta-video-wrapper" onclick="togglePlay(this)">
+                    <div class="faceta-video-wrapper" onclick="togglePlay(this, event)">
                         <video preload="metadata" class="faceta-video">
                             <source src="https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/69f2b30ee84e52bef4d91a27.mp4" type="video/mp4">
                             Seu navegador não suporta vídeos.
@@ -519,7 +519,7 @@
                             </div>
                         </div>
                         <!-- Botão de Ampliar Customizado -->
-                        <button class="btn-amplify" aria-label="Ampliar vídeo" onclick="openVideoModal('https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/69f2b30ee84e52bef4d91a27.mp4')">
+                        <button class="btn-amplify" aria-label="Ampliar vídeo" onclick="openVideoModal('https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/69f2b30ee84e52bef4d91a27.mp4', null, event)">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
                             </svg>
@@ -554,7 +554,7 @@
                             <span class="dep-num">01</span>
                             <span class="dep-tag-active">Assistindo agora</span>
                         </div>
-                        <div class="dep-video-frame" onclick="togglePlay(this)">
+                        <div class="dep-video-frame" onclick="togglePlay(this, event)">
                             <video preload="metadata" class="dep-video-player" id="video1">
                                 <source
                                     src="https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/69f2b30e663e5f92ff0b6230.mp4"
@@ -569,7 +569,7 @@
                                 </div>
                             </div>
                             <!-- Botão de Ampliar Customizado -->
-                            <button class="btn-amplify" aria-label="Ampliar vídeo" onclick="openVideoModal('https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/69f2b30e663e5f92ff0b6230.mp4')">
+                            <button class="btn-amplify" aria-label="Ampliar vídeo" onclick="openVideoModal('https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/69f2b30e663e5f92ff0b6230.mp4', null, event)">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
                                 </svg>
@@ -609,7 +609,7 @@
                             <span class="dep-num">02</span>
                             <span class="dep-tag-locked">Em espera</span>
                         </div>
-                        <div class="dep-video-frame dep-frame-blurred" onclick="togglePlay(this)">
+                        <div class="dep-video-frame dep-frame-blurred" onclick="togglePlay(this, event)">
                             <!-- Vídeo oculto (revelado ao clicar) -->
                             <video preload="none" class="dep-video-player dep-player-hidden" id="video2" ontimeupdate="checkVideoLimit(this, 14)">
                                 <source
@@ -625,7 +625,7 @@
                                 </div>
                             </div>
                             <!-- Botão de Ampliar Customizado (oculto inicialmente) -->
-                            <button class="btn-amplify" id="btnAmplify2" aria-label="Ampliar vídeo" style="display: none;" onclick="openVideoModal('https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/69d718e61d949b0e66365e3f.mp4', 14)">
+                            <button class="btn-amplify" id="btnAmplify2" aria-label="Ampliar vídeo" style="display: none;" onclick="openVideoModal('https://assets.cdn.filesafe.space/7hzaWcGgawCV1WudlwA7/media/69d718e61d949b0e66365e3f.mp4', 14, event)">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
                                 </svg>
@@ -640,7 +640,7 @@
                                         </svg>
                                     </div>
                                     <p class="dep-reveal-label">Mais um depoimento<br>aguarda por você</p>
-                                    <button class="dep-reveal-btn" onclick="revelarVideo()" id="btnRevelar"
+                                    <button class="dep-reveal-btn" onclick="revelarVideo(event)" id="btnRevelar"
                                         aria-label="Assistir segundo depoimento">
                                         <span>Assistir depoimento</span>
                                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
@@ -1413,7 +1413,8 @@
 
     <!-- JS: Revelação do segundo depoimento -->
     <script>
-        function revelarVideo() {
+        function revelarVideo(e) {
+            if (e) e.stopPropagation();
             var card = document.getElementById('depVideoLocked');
             var frame = card.querySelector('.dep-frame-blurred');
             var video = document.getElementById('video2');
@@ -1445,7 +1446,9 @@
                 video.preload = 'auto';
                 video.load();
                 setTimeout(function () {
-                    video.play().catch(function () {
+                    video.play().then(() => {
+                        card.classList.add('is-playing');
+                    }).catch(function () {
                         /* Autoplay bloqueado pelo navegador — ok, controles visíveis */
                     });
                 }, 650);
@@ -1498,10 +1501,10 @@
     <script>
         let currentVideoLimit = null;
 
-        function openVideoModal(src, limit = null) {
+        function openVideoModal(src, limit = null, e = null) {
+            if (e) e.stopPropagation();
             const modal = document.getElementById('videoModal');
             const video = document.getElementById('modalVideo');
-            const source = video.querySelector('source');
             
             // Pausa todos os outros vídeos da página antes de abrir o modal
             document.querySelectorAll('video:not(#modalVideo)').forEach(v => {
@@ -1511,7 +1514,7 @@
             });
 
             currentVideoLimit = limit;
-            source.src = src;
+            video.src = src; // Mais robusto que source.src
             video.load();
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
