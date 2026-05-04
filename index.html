@@ -1474,6 +1474,11 @@
                         }
                     }
                 });
+
+                // Revelar o vídeo 2 (da direita) quando o vídeo 1 terminar
+                v1.addEventListener('ended', function() {
+                    revelarVideo();
+                });
             }
         });
     </script>
