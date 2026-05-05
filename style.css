@@ -2610,6 +2610,51 @@ button {
     padding: 1rem 2rem;
 }
 
+/* ── CTA overlay dentro do frame de depoimentos ── */
+.dep-video-inline-cta {
+    position: absolute;
+    bottom: 56px;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    padding: 0 1rem;
+    pointer-events: none;
+    opacity: 0;
+    animation: none;
+}
+
+.dep-video-inline-cta[style*="flex"] {
+    opacity: 1;
+}
+
+.dep-inline-btn {
+    pointer-events: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--color-accent);
+    color: #fff;
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    border-radius: 999px;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.45);
+    white-space: nowrap;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.dep-inline-btn:hover {
+    background: var(--color-accent-dark);
+    transform: translateY(-2px) scale(1.03);
+}
+
 .faceta-video-mobile {
     display: none;
 }
@@ -3131,4 +3176,163 @@ body.no-scroll {
         left: 50% !important;
         transform: translateX(-50%) !important;
     }
+}
+
+/* ─── REPUTAÇÃO 360 (GOOGLE REVIEWS) ─── */
+.reputation-360 {
+    padding: 6rem 0;
+    overflow: hidden;
+    background: var(--color-cream);
+    position: relative;
+}
+
+.reputation-header {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1.2rem;
+}
+
+.google-stars-top {
+    color: #FBBC04;
+    display: flex;
+    justify-content: center;
+    gap: .15rem;
+    font-size: .7rem;
+    opacity: 0.5;
+}
+
+.google-logo-sub {
+    display: flex;
+    justify-content: center;
+}
+
+.google-logo-sub img {
+    width: 100px;
+    opacity: 0.8;
+}
+
+.reputation-title {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    margin: 0;
+}
+
+.reputation-carousel-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.reputation-carousel {
+    display: flex;
+    gap: 2.5rem;
+    width: max-content;
+    animation: infiniteScroll 80s linear infinite;
+    padding: 1rem 2rem;
+}
+
+.reputation-carousel:hover {
+    animation-play-state: paused;
+}
+
+@keyframes infiniteScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.review-card {
+    width: 280px;
+    background: transparent;
+    border-radius: 0;
+    padding: 0 1.5rem;
+    border-left: 1px solid rgba(201, 169, 98, .15);
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    transition: all .4s ease;
+}
+
+.review-card:hover {
+    border-left-color: var(--color-accent);
+}
+
+.review-user {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+}
+
+.review-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    color: var(--color-white);
+    font-size: .7rem;
+    flex-shrink: 0;
+    opacity: 0.9;
+}
+
+.review-user-info h4 {
+    font-size: .75rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    letter-spacing: .02em;
+}
+
+.review-stars {
+    color: #FBBC04;
+    font-size: .65rem;
+    display: flex;
+    gap: .1rem;
+    opacity: 0.9;
+}
+
+.review-text {
+    font-size: .75rem;
+    line-height: 1.7;
+    color: var(--color-primary);
+    opacity: 0.6;
+    font-weight: 400;
+}
+
+.reputation-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+.btn-google {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    background: transparent;
+    border-bottom: 1px solid var(--color-accent);
+    padding: .5rem 0;
+    border-radius: 0;
+    font-size: .65rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: all .3s ease;
+    letter-spacing: .2em;
+    opacity: 0.8;
+}
+
+.btn-google img {
+    width: 14px;
+    height: 14px;
 }
