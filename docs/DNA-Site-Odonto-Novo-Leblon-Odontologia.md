@@ -508,7 +508,7 @@ A arquitetura visual segue uma filosofia de **"editorial odontológico"**: largu
         <div id="video1-cta-jose" class="dep-video-cta-wrapper" style="display: none;">...</div>
         <div class="dep-video-info">
           <blockquote class="dep-quote">"Superou todas as minhas expectativas..."</blockquote>
-          <div class="dep-author-row"><span class="dep-author-dot"></span><span class="dep-author-name">José e Dr. Vitor Fernandes</span></div>
+          <div class="dep-author-row"><span class="dep-author-dot"></span><span class="dep-author-name">José e Dr. Vitor Tavares</span></div>
         </div>
       </div>
       <div class="dep-divider">...</div>
@@ -661,7 +661,7 @@ A arquitetura visual segue uma filosofia de **"editorial odontológico"**: largu
     <div class="sobre-grid">
       <div class="sobre-image">
         <div class="image-wrapper">
-          <img src="assets/dr.vitor-tavares.webp" alt="Dr. Vitor Fernandes" class="sobre-img" loading="lazy" width="600" height="800">
+          <img src="assets/dr.vitor-tavares.webp" alt="Dr. Vitor Tavares" class="sobre-img" loading="lazy" width="600" height="800">
           <div class="image-frame-accent"></div>
         </div>
       </div>
